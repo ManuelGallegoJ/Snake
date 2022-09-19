@@ -34,7 +34,7 @@ while True:
 
     #Creación de la manzana en el tablero
     r = 0
-    while manzana == cabeza or """manzana is in cuerpo""" :
+    while manzana == cabeza:
         r += 1
         manzana_posi()
         print(manzana, r)
