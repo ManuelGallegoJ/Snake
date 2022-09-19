@@ -1,5 +1,9 @@
 # Snake
 Trabajo estructura de datos
 
-Manuel lindo
-🍆💦💦💦💦💦💦
+## Integrantes
+
+- Carlos 👍👍.
+- David Toro Arango.
+- Manuel Alejandro Gallego Jiménez.
+- Jerónimo Gómez Restrepo
