@@ -6,4 +6,4 @@ Trabajo estructura de datos
 - Carlos 👍👍.
 - David Toro Arango.
 - Manuel Alejandro Gallego Jiménez.
-- Jerónimo Gómez Restrepo
+- Jerónimo Gómez Restrepo🤯🤯.
