@@ -13,14 +13,8 @@ NOTA
 @ : Es la manzana
 """
 
-#Creación del tablero
-tablero = []
-for k in range(0, 13):
-    tablero.append(["·" for i in range(0,13)])  
-    
 #Creación de la serpiente
 cabeza = [randrange(13), randrange(13)]
-tablero[cabeza[0]][cabeza[1]] = "1"
 
 #Función para hacer aparecer la mazana en otra posición
 def manzana_posi():
@@ -38,27 +32,31 @@ while True:
         r += 1
         manzana_posi()
         print(manzana, r)
-    tablero[manzana[0]][manzana[1]] = "@"
 
     #Este for dibuja todo
     for j in range(0, 13):
         for i in range(0, 13):
-            print(tablero[j][i], end=" ")
+            if j == cabeza[0] and i == cabeza[1]:
+                print("1", end=" ")
+            elif j == manzana[0] and i == manzana[1]:
+                print("@", end=" ") 
+            else:
+                print("·", end=" ")
         print()
 
     #Movimiento 
     move = str(input())
     move = move.lower()
     if move == "w":
-        mov.up(tablero)
+        cabeza = mov.up(cabeza)
     elif move == "a":
-        mov.left(tablero)
+        cabeza = mov.left(cabeza)
     elif move == "s":
-        mov.down(tablero)
+        cabeza = mov.down(cabeza)
     elif move == "d":
-        mov.right(tablero)
+        cabeza = mov.right(cabeza)
     else:
-        mov.error()
+        cabeza = mov.error()
 
     #Descomentar si se va a usar colab
     #output.clear()

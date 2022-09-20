@@ -1,14 +1,14 @@
 def up(t):
-    print("Arriba")
+    return [t[0]-1, t[1]]
 
 def left(t):
-    print("Izquierda")
+    return [t[0], t[1]-1]
 
 def down(t):
-    print("Abajo")
+    return [t[0]+1, t[1]]
 
 def right(t):
-    print("Derecha")
+    return [t[0], t[1]+1]
 
 def error():
     print("Error")
