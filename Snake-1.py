@@ -21,13 +21,13 @@ def manzana_posi():
     global manzana
     manzana = [randrange(13), randrange(13)]
 
-#Primera posición de la manzana
+#Inicializo variables
 manzana = [3,9]
-
 come = False
 creci = 0
 cont_com = 0
 move = "w"
+
 while True:
     if cabeza[0] == [55,55]:
         print("Has perdido")
@@ -75,6 +75,9 @@ while True:
     else:
         cabeza[0] = mov.error()
     cont_com += 1
+
+    #Muere por comerse
+    #Carlos se la come
     if cabeza[0] in cabeza[1:]:
         print("Has perdido")
         break
@@ -87,6 +90,7 @@ while True:
         ran_pos = randrange(9)+1
         come = True
 
+    #Se verifica que la manzana aparece x movimientos después
     if come and ran_pos == cont_com:
         manzana_posi()
         come = False
