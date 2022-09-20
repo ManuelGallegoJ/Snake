@@ -14,7 +14,7 @@ NOTA
 """
 
 #Creación de la serpiente
-cabeza = [randrange(13), randrange(13)]
+cabeza = [[randrange(13), randrange(13)]]
 
 #Función para hacer aparecer la mazana en otra posición
 def manzana_posi():
@@ -24,24 +24,26 @@ def manzana_posi():
 #Primera posición de la manzana
 manzana_posi()
 
+come = False
+
 while True:
-    if cabeza == [55,55]:
+    if cabeza[0] == [55,55]:
         print("Has perdido")
         break
     #Creación de la manzana en el tablero
     r = 0
-    while manzana == cabeza:
-        r += 1
+    while manzana in cabeza:
         manzana_posi()
-        print(manzana, r)
 
     #Este for dibuja todo
     for j in range(0, 13):
         for i in range(0, 13):
-            if j == cabeza[0] and i == cabeza[1]:
+            if j == cabeza[0][0] and i == cabeza[0][1]:
                 print("1", end=" ")
             elif j == manzana[0] and i == manzana[1]:
                 print("@", end=" ") 
+            elif [j, i] in cabeza[1:]:
+                print("0", end=" ") 
             else:
                 print("·", end=" ")
         print()
@@ -50,16 +52,29 @@ while True:
     move = str(input())
     move = move.lower()
     if move == "w":
-        cabeza = mov.up(cabeza)
+        cabeza.insert(0,mov.up(cabeza))
+        cabeza.pop(-1)
     elif move == "a":
-        cabeza = mov.left(cabeza)
+        cabeza.insert(0,mov.left(cabeza))
+        cabeza.pop(-1)
     elif move == "s":
-        cabeza = mov.down(cabeza)
+        cabeza.insert(0,mov.down(cabeza))
+        cabeza.pop(-1)
     elif move == "d":
-        cabeza = mov.right(cabeza)
+        cabeza.insert(0,mov.right(cabeza))
+        cabeza.pop(-1)
     else:
-        cabeza = mov.error()
+        cabeza[0] = mov.error()
+
+    if cabeza[0] in cabeza[1:]:
+        print("Has perdido")
+        break
+
+    if cabeza[0] == manzana:
+        manzana_posi()
+        cabeza.append(cabeza[-1])
 
     #Descomentar si se va a usar colab
     #output.clear()
     system("cls")
+    
