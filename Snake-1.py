@@ -5,6 +5,13 @@ from random import randrange
 #Descomentar si se va a usar colab
 #from google.colab import output
 
+
+"""►
+◄
+▲
+▼"""
+
+
 """
 NOTA
 
@@ -24,7 +31,7 @@ def manzana_posi():
 #Primera posición de la manzana
 manzana = [3,9]
 
-come = False
+creci = 0
 
 while True:
     if cabeza[0] == [55,55]:
@@ -71,10 +78,13 @@ while True:
         break
 
     if cabeza[0] == manzana:
+        creci +=  2
         manzana_posi()
+
+    if creci > 0:
         cabeza.append(cabeza[-1])
+        creci -= 1
 
     #Descomentar si se va a usar colab
     #output.clear()
     system("cls")
-    
