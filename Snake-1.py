@@ -25,7 +25,9 @@ def manzana_posi():
 manzana_posi()
 
 while True:
-
+    if cabeza == [55,55]:
+        print("Has perdido")
+        break
     #Creación de la manzana en el tablero
     r = 0
     while manzana == cabeza:
