@@ -14,7 +14,7 @@ NOTA
 """
 
 #Creación de la serpiente
-cabeza = [[randrange(13), randrange(13)]]
+cabeza = [[6, 6],[7,6],[8,6]]
 
 #Función para hacer aparecer la mazana en otra posición
 def manzana_posi():
@@ -22,7 +22,7 @@ def manzana_posi():
     manzana = [randrange(13), randrange(13)]
 
 #Primera posición de la manzana
-manzana_posi()
+manzana = [3,9]
 
 come = False
 
