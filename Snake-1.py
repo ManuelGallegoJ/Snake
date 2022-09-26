@@ -85,7 +85,7 @@ while True:
     #Come manzana
     if cabeza[0] == manzana:
         cont_com = 0
-        creci +=  2
+        creci +=  1
         manzana = [-1,-1]
         ran_pos = randrange(9)+1
         come = True
