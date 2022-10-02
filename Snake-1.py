@@ -10,6 +10,7 @@ NOTA
 ▲ : Es la cabeza de la serpiente
 0 : Es el cuerpo de la serpiente
 @ : Es la manzana
+X : Es la cabeza cuando la entrada es invalida y el juego se pausa hasta ingresar una tecla valida
 """
 
 #Creación de la serpiente
@@ -54,8 +55,10 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
                     print("◄", end=" ")
                 elif move == "d":
                     print("►", end=" ")
-                else:
+                elif move == "s":
                     print("▼", end=" ")
+                else:
+                    print("X", end=" ")
             elif j == manzana[0] and i == manzana[1]: #verifica si una posicion es la posicion de la manzana y la dibuja en pantalla
                 print("@", end=" ") 
             elif (j, i) in serpiente: #verifica si una posicion es el cuerpo de la serpiente y la dibuja en pantalla
@@ -63,41 +66,52 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
             else: #si una posicion está libre, entonces se dibuja como un punto
                 print("·", end=" ")
         print()
-    
-    print('w: arriba  s: abajo  a: izquierda  d: derecha') #imprime las instrucciones
+
+    print('w: Arriba  s: Abajo  a: Izquierda  d: Derecha\nSi la entrada es invalida la cabeza se convierte en una "X" y el juego se pausa hasta ingresar una tecla valida.') #imprime las instrucciones
+
 
     #Movimiento 
-    move = str(input())
-    move = move.lower() #si el input es en mayuscula lo pone en minuscula
+    move = str(input()).lower() #si el input es en mayuscula lo pone en minuscula
 
     #los siguientes condicionales verifican en que direccion se debe mover la serpiente
     #para saber que elemento se debe agregar se llama a una funcion de movimiento segun corresponda
     #inserta el nuevo elemento en la cabeza de la serpiente
     #si la serpiente no debe crecer entonces elimina la cola, de lo contrario deja la cola intacta
     #finalmente la variable de crecimiento se pone false para no dar error
+
+    
     if move == "w":
         serpiente.insert(0,mov.up(serpiente))
         if creci==False:
             serpiente.pop()
         creci=False
+        cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+  
     elif move == "a":
         serpiente.insert(0,mov.left(serpiente))
         if creci==False:
             serpiente.pop()
         creci=False
+        cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+
     elif move == "s":
         serpiente.insert(0,mov.down(serpiente))
         if creci==False:
             serpiente.pop()
         creci=False
+        cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+
     elif move == "d":
         serpiente.insert(0,mov.right(serpiente))
         if creci==False:
             serpiente.pop()
         creci=False
+        cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+    
     else:
-        serpiente[0] = mov.error()
-    cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+        pass
+
+
 
     #Este if verifica si el elemento de la cabeza se repite, es decir si la cabeza choca con el cuerpo, en ese caso el juego termina
     if serpiente.count(serpiente[0])>1:
@@ -112,5 +126,5 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
         manzana = (-1, -1) #Indica que no hay manzana
         ran_pos = randrange(9)+1 #aqui se asigna aleatoriamente en cuantos movimientos debe aparecer una nueva manzana
 
-
     system("cls") #limpia la pantalla en cada movimiento
+    
