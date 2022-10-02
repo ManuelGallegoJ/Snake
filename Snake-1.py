@@ -13,6 +13,13 @@ NOTA
 X : Es la cabeza cuando la entrada es invalida y el juego se pausa hasta ingresar una tecla valida
 """
 
+def movi():
+    global creci, cont_mov
+    if creci==False:
+        serpiente.pop()
+    creci=False
+    cont_mov += 1 
+
 #Creación de la serpiente
 serpiente = deque([(6, 6),(7,6),(8,6)])  #cola con las ubicaciones de la serpiente en pantalla, se usa pila porque siempre se elimina la cola y se añade una cabeza 
 
@@ -89,31 +96,19 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
             d = False
             if move == "w":
                 serpiente.insert(0,mov.up(serpiente))
-                if creci==False:
-                    serpiente.pop()
-                creci=False
-                cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
         
             elif move == "a":
                 serpiente.insert(0,mov.left(serpiente))
-                if creci==False:
-                    serpiente.pop()
-                creci=False
-                cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
 
             elif move == "s":
                 serpiente.insert(0,mov.down(serpiente))
-                if creci==False:
-                    serpiente.pop()
-                creci=False
-                cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
 
             elif move == "d":
                 serpiente.insert(0,mov.right(serpiente))
-                if creci==False:
-                    serpiente.pop()
-                creci=False
-                cont_mov += 1 #cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
 
 
 
