@@ -58,7 +58,7 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
                 elif move == "s":
                     print("▼", end=" ")
                 else:
-                    print("X", end=" ")
+                    continue
             elif j == manzana[0] and i == manzana[1]: #verifica si una posicion es la posicion de la manzana y la dibuja en pantalla
                 print("@", end=" ") 
             elif (j, i) in serpiente: #verifica si una posicion es el cuerpo de la serpiente y la dibuja en pantalla
