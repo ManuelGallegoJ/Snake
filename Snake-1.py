@@ -13,7 +13,7 @@ NOTA
 X : Es la cabeza cuando la entrada es invalida y el juego se pausa hasta ingresar una tecla valida
 """
 
-def movi():
+def crecimiento_funct():
     global creci, cont_mov
     if creci==False:
         serpiente.pop()
@@ -76,7 +76,6 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
 
     print('w: Arriba  s: Abajo  a: Izquierda  d: Derecha.') #imprime las instrucciones
 
-
     #Movimiento 
     d = True
     moveA = move
@@ -96,21 +95,19 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
             d = False
             if move == "w":
                 serpiente.insert(0,mov.up(serpiente))
-                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                crecimiento_funct()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
         
             elif move == "a":
                 serpiente.insert(0,mov.left(serpiente))
-                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                crecimiento_funct()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
 
             elif move == "s":
                 serpiente.insert(0,mov.down(serpiente))
-                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
+                crecimiento_funct()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
 
             elif move == "d":
                 serpiente.insert(0,mov.right(serpiente))
-                movi()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
-
-
+                crecimiento_funct()#cada moviminto suma uno a esta variable, esto con el fin de saber en que movimiento debe salir una manzana
 
     #Este if verifica si el elemento de la cabeza se repite, es decir si la cabeza choca con el cuerpo, en ese caso el juego termina
     if serpiente.count(serpiente[0])>1:
