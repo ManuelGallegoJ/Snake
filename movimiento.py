@@ -18,5 +18,3 @@ def right(t):
         return False
     return (t[0][0], t[0][1]+1)
 
-def error():
-    print("Error")
