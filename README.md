@@ -3,8 +3,8 @@ Trabajo estructura de datos
 
 ## Integrantes
 
-- Carlos 👍👍 nice.
-- David Toro Arango alias el pancreas.
+- Carlos David Arango.
+- David Toro Arango.
 - Manuel Alejandro Gallego Jiménez.
 - Jerónimo Gómez Restrepo🤯🤯.
 
