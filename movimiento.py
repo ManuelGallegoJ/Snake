@@ -1,3 +1,6 @@
+#O(1) (está indexando un deque en la primera posición que es O(1) y luego en esa posición que es un array indexa en la primera o segunda posición O(1)) 
+
+
 def up(t):
     if t[0][0]-1 < 0:
         return False

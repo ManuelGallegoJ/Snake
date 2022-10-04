@@ -23,7 +23,7 @@ def crecimiento_funct(): # O(1)
 #Creación de la serpiente
 serpiente = deque([(6, 6),(7,6),(8,6)])  #cola con las ubicaciones de la serpiente en pantalla, se usa pila porque siempre se elimina la cola y se añade una cabeza 
 
-#Función para hacer aparecer la mazana en otra posición O(1)
+#Función para hacer aparecer la mazana en otra posición. O(1)
 def manzana_posi():
     global manzana
     manzana = (randrange(13), randrange(13))
@@ -35,7 +35,7 @@ cont_mov = 0  #variable aleatoria que determina cuantos movimientos se han reali
 move = "w" #variable de entrada que determina en que direccion se mueve la serpiente
 ran_pos=-1 #variable aleatoria, inicialmente -1 para no afectar el programa, que determina en cuantos movimientos se generará la proxima manzana
 
-while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con su propio cuerpo. Es O(N)
+while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con su propio cuerpo. Es
 
     #la unica forma de que serpiente tenga un false es si las funciones de movimiento determinan que el movimiento se sale del tablero
     if serpiente[0] == False:
@@ -52,7 +52,7 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
     while manzana in serpiente: 
         manzana_posi()
 
-    #Este for dibuja todo. es O(1) porque se ejecuta siempre se ejecuta 13*13 veces
+    #Este for dibuja todo. es O(N**2) siendo n el tamaño del tablero, en este caso 13
     for j in range(0, 13):
         for i in range(0, 13):
             if j == serpiente[0][0] and i == serpiente[0][1]: #verifica si una posicion es la cabeza de la serpiente y le da un icono segun la direccion de la misma
@@ -76,7 +76,7 @@ while True: #ciclo de todo el juego, para en cuanto se choca con una pared o con
 
     print('w: Arriba  s: Abajo  a: Izquierda  d: Derecha.') #imprime las instrucciones
 
-    #Movimiento 
+    #Movimiento O(1)
     d = True
     moveA = move #movimiento anterior
     while d: 
