@@ -9,7 +9,7 @@ Solo se puede realizar un movimiento a la vez.
 - Carlos David Arango.
 - David Toro Arango.
 - Manuel Alejandro Gallego Jiménez.
-- Jerónimo Gómez Restrepo🤯🤯.
+- Jerónimo Gómez Restrepo.
 
 ## NOTA
 
