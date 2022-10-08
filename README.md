@@ -1,5 +1,8 @@
 # Snake
 Trabajo estructura de datos
+Juego snake para windows ejecutado por consola .
+Para moverse se deba ingresar el movimiento deseado y luego dar enter,
+solo se puede realizar un movimiento a la vez.
 
 ## Integrantes
 
